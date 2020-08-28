@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block title %}Konwerter walut{% endblock %}
+{% block body %}
+    <div class="container">
+        <h3>Konwersja PLN na EUR</h3>
+        <div class="col-md-6">
+            {{ form(form) }}
+            {%  if converter.getExchangeRate != 0 %}
+                <p>po kursie {{ converter.getExchangeRate }} z dnia {{ converter.getExchangeDate }}</p>     
+            {% endif %}
+            <button type="button" class="btn-default btn" onclick="location.href ='{{ path('homepage') }}';">Wyczyść</button>
+        </div>
+        
+    </div>
+{% endblock %}
